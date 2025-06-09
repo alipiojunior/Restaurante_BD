@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurante - Usuário Padrão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div>
+  <h1>Gerenciar Reservas</h1>
+
+  <h2>Nova Reserva</h2>
+  <input type="number" id="idClienteReserva" placeholder="ID do Cliente">
+  <input type="number" id="idMesaReserva" placeholder="ID da Mesa">
+  <input type="time" id="dataHoraReserva"> <input type="number" id="numPessoasReserva" min="1" placeholder="Quantidade de Pessoas">
+  <button id="btnCadastrarReserva">Cadastrar Reserva</button>
+  <button id="btnMostrarReservas" class="read">Mostrar Todas as Reservas</button>
+  <br>
+  <hr>
+
+  <h2>Atualizar Reserva</h2>
+  <input type="number" id="idReservaAtualizar" placeholder="ID da Reserva para Atualizar">
+  <input type="time" id="novaDataHoraReserva">
+  <input type="number" id="novoNumPessoasReserva" min="1" placeholder="Nova Qtd de Pessoas">
+  <button id="btnAtualizarReserva" class="update">Atualizar Reserva</button>
+  <br>
+  <hr>
+
+  <h2>Deletar Reserva</h2>
+  <input type="number" id="idReservaDeletar" placeholder="ID da Reserva para Deletar">
+  <button id="btnDeletarReserva" class="delete">Deletar Reserva</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

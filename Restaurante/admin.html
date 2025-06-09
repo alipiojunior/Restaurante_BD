@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurante - Administrador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div>
+  <h1>Administração do Restaurante</h1>
+
+  <h2>Gerenciar Clientes</h2>
+  <input type="text" id="nomeCliente" placeholder="Nome do Cliente">
+  <input type="text" id="telefoneCliente" placeholder="Telefone do Cliente">
+  <input type="email" id="emailCliente" placeholder="Email do Cliente">
+  <button id="btnCadastrarCliente">Cadastrar Cliente</button>
+  <button id="btnMostrarClientes" class="read">Mostrar Clientes</button>
+  <br>
+  <input type="email" id="emailDeletarCliente" placeholder="Email do Cliente para Deletar">
+  <button id="btnDeletarCliente" class="delete">Deletar Cliente</button>
+
+  <hr>
+
+  <h2>Gerenciar Mesas</h2>
+  <input type="number" id="capacidadeMesa" min="1" placeholder="Capacidade da Mesa">
+  <input type="text" id="localizacaoMesa" placeholder="Localização da Mesa">
+  <button id="btnCadastrarMesa">Cadastrar Mesa</button>
+  <button id="btnMostrarMesas" class="read">Mostrar Mesas</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
