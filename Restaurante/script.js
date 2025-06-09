@@ -1,14 +1,11 @@
-// Define a URL base do seu backend
-const BASE_URL = 'http://localhost:3000'; // Onde seu servidor Node.js/Express está rodando
+const BASE_URL = 'http://localhost:3000'; 
 
-// Função auxiliar para formatar a data para o MySQL DATETIME
 function formatToMySQLDateTime(datetimeLocalString) {
     if (!datetimeLocalString) return null;
     const [datePart, timePart] = datetimeLocalString.split('T');
     return `${datePart} ${timePart}:00`;
 }
 
-// ============== CLIENTE (Admin) ==============
 document.getElementById('btnCadastrarCliente')?.addEventListener('click', async () => {
     const nome = document.getElementById('nomeCliente').value;
     const telefone = document.getElementById('telefoneCliente').value;
@@ -66,7 +63,6 @@ document.getElementById('btnDeletarCliente')?.addEventListener('click', async ()
     }
 });
 
-// ============== MESA (Admin) ==============
 document.getElementById('btnCadastrarMesa')?.addEventListener('click', async () => {
     const capacidade = document.getElementById('capacidadeMesa').value;
     const localizacao = document.getElementById('localizacaoMesa').value;
@@ -102,7 +98,6 @@ document.getElementById('btnMostrarMesas')?.addEventListener('click', async () =
     }
 });
 
-// ============== RESERVA (User) ==============
 document.getElementById('btnCadastrarReserva')?.addEventListener('click', async () => {
     const id_cliente = document.getElementById('idClienteReserva').value;
     const id_mesa = document.getElementById('idMesaReserva').value;
@@ -148,9 +143,6 @@ document.getElementById('btnAtualizarReserva')?.addEventListener('click', async 
     const novoNumPessoas = document.getElementById('novoNumPessoasReserva').value;
 
     const data_hora = document.getElementById('novaDataHoraReserva').value;
-
-
-
 
     try {
         const response = await fetch(`${BASE_URL}/reservas/${id_reserva}`, {

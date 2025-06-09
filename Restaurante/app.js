@@ -13,10 +13,6 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Servir arquivos estáticos da pasta Front-End
-// Verifique se o caminho está correto. Se a pasta Front-End estiver no mesmo nível da pasta Back-End,
-// o caminho deve ser '../Front-End'. Se estiver um nível acima, como em seu exemplo, 'path.join(__dirname, '../../Front-End')'
-// pode estar correto dependendo da sua estrutura de diretórios.
 app.use(express.static(path.join(__dirname, '../Front-End')));
 
 // Rotas para clientes
@@ -27,7 +23,7 @@ app.post('/clientes', async (req, res) => {
         res.status(201).send('Cliente cadastrado com sucesso!');
     } catch (error) {
         console.error('Erro ao cadastrar cliente:', error);
-        res.status(400).send(error.message); // Envia a mensagem de erro específica do banco
+        res.status(400).send(error.message); 
     }
 });
 
