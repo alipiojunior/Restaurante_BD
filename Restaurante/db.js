@@ -3,17 +3,16 @@ const mysql = require('mysql2/promise');
 async function connect() {
     if (global.connection && global.connection.state !== 'disconnected')
         return global.connection;
+    const connection = await mysql.createConnection("mysql://root:zack22507@localhost:3306/restaurante");
 
-    const connection = await mysql.createConnection("mysql://root:sua_senha@localhost:3306/SeuBanco"); // Substitua pelas suas informações
+    // const connection = await mysql.createConnection("mysql://root:sua_senha@localhost:3306/SeuBanco"); // Substitua pelas suas informações
     console.log("Conectou no MySQL!");
     global.connection = connection;
     return connection;
 
-    //  const connection = await mysql.createConnection("mysql://root:zack22507@localhost:3306/restaurante");
 
 }
 
-// Funções para Cliente
 async function selectClients() {
     const conn = await connect();
     const [rows] = await conn.execute('SELECT * FROM Cliente;');
@@ -22,7 +21,6 @@ async function selectClients() {
 
 async function registerClients(nome, telefone, email) {
     const conn = await connect();
-    // Tratamento de exceções para e-mail duplicado ou outros erros
     try {
         const [result] = await conn.execute('INSERT INTO Cliente (nome, telefone, email) VALUES (?, ?, ?);', [nome, telefone, email]);
         return result;
@@ -30,7 +28,7 @@ async function registerClients(nome, telefone, email) {
         if (error.code === 'ER_DUP_ENTRY') {
             throw new Error('E-mail já cadastrado. Por favor, use outro e-mail.');
         }
-        throw error; // Propaga outros erros
+        throw error;
     }
 }
 
