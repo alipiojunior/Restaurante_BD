@@ -4,10 +4,13 @@ async function connect() {
     if (global.connection && global.connection.state !== 'disconnected')
         return global.connection;
 
-    const connection = await mysql.createConnection("mysql://root:zack22507@localhost:3306/restaurante");
+    const connection = await mysql.createConnection("mysql://root:sua_senha@localhost:3306/SeuBanco"); // Substitua pelas suas informações
     console.log("Conectou no MySQL!");
     global.connection = connection;
     return connection;
+
+    //  const connection = await mysql.createConnection("mysql://root:zack22507@localhost:3306/restaurante");
+
 }
 
 // Funções para Cliente
